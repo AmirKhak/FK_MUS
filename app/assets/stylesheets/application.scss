@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+#header {
+  background-color: BLACK;
+  width: 100%;
+  height: 150px;
+  color: WHITE;
+}
+
+#header_logo {
+  width: 55px;
+  height: 55px;
+  margin-right: 35px;
+  margin-top: 30px;
+  border-radius: 100%;
+  border: 5px solid GRAY;
+  display: inline-block;
+  float: right;
+}
+
+#header p {
+  display: block;
+  float: right;
+  font-size: 2em;
+  margin-top: 30px;
+  margin-right: 5px;
+}
+
+#lowerHeaderArea {
+  background-color: inherit;
+  height: 50px;
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#navbar_item {
+  float: right;
+}
+
+#navbar_item a {
+  color: WHITE;
+}
+
+#navbar {
+  float: right;
+}
+
+#footer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  height: 100px;
+  background-color: GRAY;
+  text-align: center;
+  color: WHITE;
+}
+
+#footer p {
+  display: inline-block;
+}
