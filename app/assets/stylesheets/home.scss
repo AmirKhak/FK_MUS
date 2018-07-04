@@ -1,3 +1,164 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin stationaryImage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+@mixin increasingHight($from, $to) {
+  @keyframes increasedHight {
+      from {height: $from;}
+      to {height: $to;}
+  }
+  animation-name: increasedHight;
+  animation-duration: 2s;
+}
+
+#home_body {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#intro {
+  width: 100%;
+  height: 300px;
+  @include stationaryImage;
+  background-image: url('setar.jpg');
+  text-align: center;
+}
+
+#intro p {
+  margin-top: 120px;
+  font-size: 2em;
+  display: inline-block;
+  color: LIGHTGREY;
+}
+
+#intro p:hover {
+  color: GREY;
+}
+
+#practice {
+  width: 100%;
+  height: 100px;
+  color: WHITE;
+  background-color: FIREBRICK;
+}
+
+@mixin practice_section {
+  height: inherit;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+#practice_left {
+  @include practice_section;
+  float:left;
+  font-size: 1em;
+}
+
+#practice_right {
+  @include practice_section;
+  float: right;
+  font-size: 2em;
+}
+
+#practice p {
+  margin-top: 30px;
+}
+
+#practice:hover {
+  @include increasingHight(100px, 110px);
+  background-color: DARKRED;
+}
+
+#learning {
+  width: 100%;
+  height: 200px;
+  background-image: url('notes.jpg');
+  @include stationaryImage;
+  text-align: center;
+}
+
+#learning p {
+  font-size: 2em;
+  color: TURQUOISE;
+  margin-top: 80px;
+  display: inline-block;
+}
+
+#learning p:hover {
+  color: DARKTURQUOISE;
+}
+
+#contact_us_body {
+  width: 100%;
+  height: 400px;
+  background-image: url('gorgan_aerial.png');
+  margin-top: -62px;
+  overflow: visible;
+  text-align: center;
+  color: WHITE;
+}
+
+#contact_us_area {
+  width: 60%;
+  height: 60%;
+  background-color: DIMGREY;
+  margin-top: 93px;
+  overflow: visible;
+  display: inline-block;
+  text-align: center;
+}
+
+#contact_us_interior {
+  width: 90%;
+  height: 90%;
+  margin-top: 2.5%;
+  display: inline-block;
+}
+
+#contact_us_interior_left {
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid WHITE;
+  float: left;
+}
+
+#contact_us_interior_right {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+#gorgan_map {
+  width: 95%;
+  height: 90%;
+}
+
+#contact_us_interior_right p {
+  font-size: 1em;
+}
+
+#contact_us_interior_left a {
+  color: WHITE;
+}
+
+#contact_us_interior_left p {
+  font-size: 1em;
+}
+
+#gorgan_map_Modal {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+}
+
+#gorgan_map_modal {
+  width: 90%;
+  height: 90%;
+}
