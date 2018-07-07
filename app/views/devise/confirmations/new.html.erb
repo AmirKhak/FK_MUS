@@ -1,0 +1,24 @@
+<div id="authentication_page">
+
+  <%= image_tag('tanbour.jpg', id: "authentication_image") %>
+  <div id="sign_in_page">
+    <h2>فرستادن دوباره دستورات تایید</h2>
+
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label "پست الکترونیک" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "دستورات تایید را دوباره بفرست" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+  </div>
+
+</div>

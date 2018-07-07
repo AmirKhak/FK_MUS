@@ -1,14 +1,17 @@
 <div id="header">
   <%= image_tag("Setar.jpg", id: "header_logo") %>
   <p>موسیقی فرزان</p>
-
+  <%= link_to "ورود", new_user_session_url, id: "sign_in_link" %>
   <nav id="lowerHeaderArea" class="navbar navbar-default">
     <div id="navbar" class="container-fluid">
       <ul class="nav navbar-nav">
         <li id="navbar_item" class="navbarItem"><a href="/">صفحه اصلی</a></li>
         <li id="navbar_item" class="navbarItem"><a href="">دوره ها</a></li>
+        <% if user_signed_in? %>
+          <li id="navbar_item" class="navbarItem"><a href="/user">کاربران</a></li>
+        <% end %>
         <li id="navbar_item" class="navbarItem"><a href="/faq">سوالات متداول</a></li>
-        <li id="navbar_item" class="navbarItem"><a href="/contact_us">تماس با ما</a></li>        
+        <li id="navbar_item" class="navbarItem"><a href="/contact_us">تماس با ما</a></li>
         <li id="navbar_item" class="navbarItem"><a href="/about_us">درباره ما</a></li>
       </ul>
     </div>

@@ -1,0 +1,27 @@
+<% if @admin %>
+  <div id="authentication_page">
+    <div class="sign_in_page">
+      <% @users.each do |user| %>
+        <div class="user">
+
+          <button class="user_button">
+            <% button_title = "ادمین کن" %>
+            <% if user.admin %>
+              <% button_title = "از ادمین بردار" %>
+            <% end %>
+            <%= link_to(button_title, edit_user_path(user.id)) %>
+          </button>
+          <button class="user_button">
+            <%= link_to("حذف", user_path(user.id)) %>
+          </button>
+          <p><%= user.name %>: نام</p>
+          <p class="user_p"><%= user.surn_name %>: نام خانوادگی</p>
+          <p class="user_p"><%= user.email %>: پست الکترونیک</p>
+          <%= image_tag(user.avatar, class: "user_avatar") %>
+
+        </div>
+      <% end %>
+    </div>
+    <%= image_tag('tanbour.jpg', id: "authentication_image") %>
+  </div>
+<% end %>
