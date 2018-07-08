@@ -1,3 +1,114 @@
 // Place all the styles related to the Faq controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin appearing {
+  @keyframes appearingAnim {
+      from {
+        display: none
+      }
+      to {
+        display: block;
+      }
+  }
+  animation-name: appearingAnim;
+  animation-duration: 2.5s;
+}
+
+@mixin appearing($from, $to) {
+  @keyframes appearingAnim {
+
+      from {
+        -ms-transform: translate(0px, $from); /* IE 9 */
+        -webkit-transform: translate(0px, $from); /* Safari */
+        transform: translate(0px, $from);
+        opacity: 0;
+      }
+
+      to {
+        -ms-transform: translate(0px,$to); /* IE 9 */
+        -webkit-transform: translate(0px,$to); /* Safari */
+        transform: translate(0px,$to);
+        opacity: 100;
+      }
+  }
+  animation-name: appearingAnim;
+  animation-duration: 3s;
+}
+
+#faq_body {
+  margin-top: -61px;
+}
+
+#faq_index_button_container {
+  display: block;
+  height: 30px;
+  width: fit-content;
+  float: right;
+}
+
+#faq_index_button {
+  float: right;
+  height: 30px;
+  width: fit-content;
+  display: block;
+  background-color: DARKSALMON;
+  color: white;
+  border: navajowhite;
+  border-radius: 5px;
+}
+
+.faq_question {
+  height: 100%;
+  width: 100%;
+  background-color: darkcyan;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  float: right;
+  margin-top: 2.5px;
+}
+
+.faq_question p {
+  color: white;
+  float: right;
+  margin-top: 5px;
+  height: fit-content;
+  margin-bottom: 0px;
+}
+
+.faq_answer {
+  display: none;
+  height: 30px;
+  width: 100%;
+  background-color: cyan;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  float: right;
+}
+
+.faq_answer p {
+  float: right;
+  margin-top: 5px;
+  height: fit-content;
+  margin-bottom: 0px;
+  color: DARKGREY;
+}
+
+.faq_container:hover .faq_answer {
+  display: block;
+  @include appearing(-30px, 0px);
+}
+
+.faq_question_button {
+  background-color: inherit;
+  border: 1px solid white;
+  width: fit-content;
+  height: 25px;
+  margin: 2.5px;
+  float: left;
+  color: white;
+  border-radius: 2px;
+}
+
+.faq_question_button a {
+  color: white;
+}

@@ -11,7 +11,9 @@ default: &default
   username: farz_mus
   password: 1
   socket: /var/run/mysqld/mysqld.sock
-
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
+  
 development:
   <<: *default
   database: db_farz_mus

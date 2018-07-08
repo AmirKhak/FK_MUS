@@ -1,3 +1,53 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user {
+  width: 100%;
+  height: 35px;
+  background-color: indianred;
+  border-radius: 5px;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+
+.user p {
+  display: inline-block;
+  height: 30px;
+  margin: 2.5px;
+  padding: 5px;
+  color: white;
+}
+
+.user_button {
+  display: inline-block;
+  float: left;
+  margin: 2.5px;
+  width: fit-content;
+  height: 30px;
+  background-color: inherit;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.user_button:hover {
+  background-color: LIGHTCORAL;
+}
+
+.user_button a {
+  color: WHITE;
+}
+
+.user_p {
+  border-left: 1px solid white;
+}
+
+.user_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: right;
+  overflow: visible;
+  -ms-transform: translate(5px, -7.5px); /* IE 9 */
+  -webkit-transform: translate(5px, -7.5px); /* Safari */
+  transform: translate(5px, -7.5px);
+}

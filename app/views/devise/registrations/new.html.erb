@@ -1,7 +1,5 @@
-<div id="authentication_page">
-  <%= image_tag('tanbour.jpg', id: "authentication_image") %>
-
-  <div id="sign_in_page">
+<div class="authentication_page">
+  <div class="sign_in_page">
     <h2>ثبت نام کاربر</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -48,4 +46,5 @@
     <%= render "devise/shared/links" %>
 
   </div>
+  <%= image_tag('tanbour.jpg', class: "authentication_image") %>
 </div>
