@@ -23,6 +23,17 @@
   font-style: normal;
 }
 
+@mixin authentication_content {
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  float: right;
+  margin: 2.5%;
+  background-color: FLORALWHITE;
+  overflow: hidden;
+  padding: 2.5%;
+}
+
 @mixin pushDownText($from, $to) {
   @keyframes pushDown {
       from {
@@ -135,7 +146,7 @@ title {
   display: inline-block;
 }
 
-#sign_in_link {
+#signIn_link {
   float: left;
   display: inline-block;
   font-size: 1em;
@@ -144,15 +155,8 @@ title {
   color: WHITE;
 }
 
-@mixin authentication_content {
-  height: fit-content;
-  width: fit-content;
-  display: inline-block;
-  float: right;
-  margin: 2.5%;
-  background-color: FLORALWHITE;
-  overflow: hidden;
-  padding: 2.5%;
+#signIn_link a {
+  color: WHITE;
 }
 
 .sign_in_page {

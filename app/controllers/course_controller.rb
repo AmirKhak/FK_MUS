@@ -4,6 +4,11 @@ class CourseController < ApplicationController
     @admin = isAdmin;
   end
 
+  def show
+    @course = Course.find(params[:id])
+    @admin = isAdmin;
+  end
+
   def create
     @course = Course.new(course_params)
 
@@ -47,6 +52,6 @@ class CourseController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:answer, :question)
+    params.require(:course).permit(:name, :discribtion, :price, :capacity, :avatar)
   end
 end

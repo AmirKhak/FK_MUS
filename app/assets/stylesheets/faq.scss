@@ -112,3 +112,46 @@
 .faq_question_button a {
   color: white;
 }
+
+@mixin authentication_content {
+  height: fit-content;
+  width: fit-content;
+  display: inline-block;
+  float: right;
+  margin: 2.5%;
+  background-color: FLORALWHITE;
+  overflow: hidden;
+  padding: 2.5%;
+}
+
+.sign_in_page {
+  @include authentication_content;
+}
+
+.authentication_page {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.authentication_image {
+  width: 35%;
+  height: 40%;
+  display: inline-block;
+  overflow: hidden;
+  float: left;
+}
+
+.gorgan_map_Modal {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 10%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.gorgan_map_modal {
+  width: 40%;
+  height: 40%;
+}

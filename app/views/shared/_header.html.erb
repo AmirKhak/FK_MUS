@@ -1,7 +1,9 @@
 <div id="header">
   <%= image_tag("Setar.jpg", id: "header_logo") %>
   <p>موسیقی فرزان</p>
-  <%= link_to "ورود", new_user_session_url, id: "sign_in_link" %>
+  <div id="signIn_link">
+    <%= link_to "ورود", new_user_session_url %>
+  </div>
   <nav id="lowerHeaderArea" class="navbar navbar-default">
     <div id="navbar" class="container-fluid">
       <ul class="nav navbar-nav">
