@@ -1,6 +1,6 @@
 <div class="authentication_page">
   <div class="sign_in_page">
-    <h2>تغییر اطلاعات کاربر  <%= resource_name.to_s.humanize %></h2>
+    <h2>تغییر اطلاعات کاربر </h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>

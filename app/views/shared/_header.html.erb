@@ -1,22 +1,55 @@
 <div id="header">
-  <%= image_tag("Setar.jpg", id: "header_logo") %>
-  <p>موسیقی فرزان</p>
-  <div id="signIn_link">
-    <%= link_to "ورود", new_user_session_url %>
-  </div>
-  <nav id="lowerHeaderArea" class="navbar navbar-default">
-    <div id="navbar" class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li id="navbar_item" class="navbarItem"><a href="/">صفحه اصلی</a></li>
-        <li id="navbar_item" class="navbarItem"><a href="/course">دوره ها</a></li>
-        <% if user_signed_in? %>
-          <li id="navbar_item" class="navbarItem"><a href="/user">کاربران</a></li>
-        <% end %>
-        <li id="navbar_item" class="navbarItem"><a href="/faq">سوالات متداول</a></li>
-        <li id="navbar_item" class="navbarItem"><a href="/contact_us">تماس با ما</a></li>
-        <li id="navbar_item" class="navbarItem"><a href="/about_us">درباره ما</a></li>
-      </ul>
+  <div id="topperHeaderArea">
+    <%= image_tag("Setar.jpg", id: "header_logo") %>
+    <p>موسیقی فرزان</p>
+    <div id="signIn_link">
+      <% if user_signed_in? %>
+        <div id="user_dropdown">
+          <div id="user_img_container">
+            <%= image_tag(current_user.avatar.url, id: "user_img") %>
+          </div>
+          <div id="user_dropdown_options">
+            <div class="user_dropdown_option"><%= link_to "تغییر در اکانت", edit_user_registration_path%></div>
+            <div id="withTopBorder" class="user_dropdown_option"><a href="/user/courses/<%= current_user.id %>">دوره ها</a></div>
+            <div id="withTopBorder" class="user_dropdown_option"><%= link_to "خروج", destroy_user_session_path, method: "delete" %></div>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to "ورود", new_user_session_url %>
+      <% end %>
     </div>
-  </nav>
+  </div>
+  <div id="lowerHeaderArea">
+    <nav id="lowerHeaderArea" class="navbar navbar-default">
+      <div id="navbar" class="container-fluid">
+        <ul class="nav navbar-nav">
+          <% admin = false; %>
+          <% if user_signed_in? %>
+            <% if current_user.admin %>
+              <% admin = true; %>
+            <% end %>
+          <% end %>
+          <% navbar_items = ["صفحه اصلی", "دوره ها", "کاربران", "سوالات متداول", "تماس با ما", "درباره ما"]; %>
+          <% navbar_links = ["/", "/course", "/user", "/faq", "/contact_us", "/about_us"]%>
+          <% navbar_items.each do |item| %>
+            <% if admin || item != "کاربران"%>
+              <% i = navbar_items.index(item); %>
+              <li id="navbarItem"><a class="navbarItem_link" href='<%= navbar_links[i]%>'><%= item %></a></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
 </div>
+<script>
+  var classes = document.getElementsByClassName("navbarItem_link");
+  var new_style = "color: WHITE; height: 10px;";
+  var anim = "";
+  for (i = 0; i <= 5; i++) {
+    anim = "emerge " + (2 + i * 2) + "s";
+    classes[i].style = new_style;
+    classes[i].style.animation = anim;
+  }
+</script>

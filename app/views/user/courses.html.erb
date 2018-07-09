@@ -1,0 +1,17 @@
+<% if @isRealUser %>
+  <div class="authentication_page" id="user_body">
+    <div class="sign_in_page">
+      <% @courses.each do |course_id| %>
+        <div class="user_course_container">
+          <% course = Course.find(course_id) %>
+          <p class="withBorderLeft"><%= course.name %> نام دوره</p>
+          <p><%= course.created_at %> :ثبت نام در تاریخ</p>
+          <button class="faq_question_button"><a href="/user/courses/<%= current_user.id %>/<%= course_id %>">منتفی</a></button>
+        </div>
+      <% end %>
+    </div>
+    <%= image_tag('tanbour.jpg', class: "authentication_image") %>
+  </div>
+<% else %>
+  <p><%= @isRealUser %></p>
+<% end %>

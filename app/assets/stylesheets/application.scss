@@ -48,7 +48,29 @@
       }
   }
   animation-name: pushDown;
-  animation-duration: 2.5s;
+  animation-duration: 2s;
+}
+
+@keyframes emerge {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+}
+
+@mixin emerging($delay) {
+  @keyframes emerge {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 100;
+      }
+  }
+  animation-name: emerge;
+  animation-duration: $delay;
 }
 
 body {
@@ -107,25 +129,32 @@ title {
   @include pushDownText(-3px, 0px);
 }
 
+#topperHeaderArea {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+}
+
 #lowerHeaderArea {
   background-color: inherit;
   height: 30px;
   display: inherit;
-  width: 100%;
+  width: fit-content;
   min-height: 10px;
   margin-bottom: 0px;
-  overflow: hidden;
+  overflow: visible;
+  float: right;
   border: none;
+  position: relative;
 }
 
-#navbar_item {
+#navbarItem {
   float: right;
 }
 
-#navbar_item a {
+.navbarItem_link {
   color: WHITE;
   height: 10px;
-  @include pushDownText(-3px, 0px);
 }
 
 #navbar {
@@ -189,4 +218,49 @@ title {
 .gorgan_map_modal {
   width: 40%;
   height: 40%;
+}
+
+#user_dropdown {
+  width: 100px;
+  height: fit-content;
+  position: absolute;
+}
+
+#user_img_container {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+#user_img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid GREY;
+  background-color: GREY;
+  border-radius: 50%;
+}
+
+#user_dropdown_options {
+  display: none;
+  margin-top: 1.5px;
+}
+
+#user_dropdown:hover #user_dropdown_options {
+  display: inherit;
+}
+
+.user_dropdown_option {
+  height: 20px;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  background-color: darkslategrey;
+}
+
+.user_dropdown_option a {
+  color: white;
+}
+
+#withTopBorder {
+  border-top: 1px solid white;
 }

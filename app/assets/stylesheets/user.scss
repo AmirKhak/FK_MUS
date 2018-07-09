@@ -58,3 +58,28 @@
   overflow: hidden;
   background-color: indianred;
 }
+
+#user_body {
+  margin-top: -62px;
+}
+
+.user_course_container {
+  height: 30px;
+  width: fit-content;
+  background-color: lightseagreen;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.user_course_container p {
+  color: white;
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  float: right;
+  font-size: 1em;
+}
+
+.withBorderLeft {
+  border-left: 1px solid white;
+}
