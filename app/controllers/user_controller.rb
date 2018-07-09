@@ -49,7 +49,7 @@ class UserController < ApplicationController
     @isRealUser = isRealUser(params[:user_id]);
     if @isRealUser
       user = User.find(params[:user_id]);
-      if user.course_ids.delete(params[:course_id].to_i)
+      if user.courses.delete(params[:course_id].to_i)
         user.save;
         flash[:notice] = "با موفقیت حذف شد"
       else
