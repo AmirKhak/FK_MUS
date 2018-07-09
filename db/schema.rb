@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180705154144) do
+ActiveRecord::Schema.define(version: 20180709092925) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.text "description", null: false
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20180705154144) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "courses_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.index ["course_id"], name: "index_courses_users_on_course_id"
+    t.index ["user_id"], name: "index_courses_users_on_user_id"
   end
 
   create_table "faqs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

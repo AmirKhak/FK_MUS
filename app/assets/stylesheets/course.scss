@@ -1,3 +1,87 @@
 // Place all the styles related to the Course controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#course_body {
+  margin-top: -62px;
+}
+
+#course_index_button {
+  float: right;
+  height: 30px;
+  width: fit-content;
+  display: block;
+  background-color: CRIMSON;
+  color: white;
+  border: navajowhite;
+  border-radius: 5px;
+}
+
+.course_area {
+  height: 100%;
+  width: 100%;
+  float: right;
+  background-color: cadetblue;
+  margin-top: 2.5px;
+  border-radius: 2px;
+}
+
+.course_area_avatar {
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  float: right;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.course_area_text_button_container {
+  height: 100px;
+  width: fit-content;
+}
+
+.course_area_text {
+  margin: 2px;
+  font-size: 1.35em;
+}
+
+.course_area_text_container {
+  width: 100%;
+  height: 70px;
+  display: block;
+  text-align: right;
+  color: white;
+}
+
+.course_area_text_container p {
+  margin: unset;
+}
+
+.course_area_button_container {
+  height: 30px;
+  width: 100%;
+}
+
+.course_area_button {
+  height: 25px;
+  width: fit-content;
+  float: right;
+  margin: 2.5px;
+  background-color: inherit;
+  border: 1px solid white;
+  color: white;
+  border-radius: 2px;
+}
+
+.course_area_button a {
+  color: white;
+}
+
+.course_area_button:hover {
+  background-color: lightskyblue;
+}
+
+#moreModalContent {
+  background-color: cadetblue;
+  color: white;
+  overflow: hidden;
+}

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :user, only: [:index, :destroy, :edit]
   resources :faq, only: [:index, :create, :destroy, :update]
-  resources :course, only: [:index, :show, :create, :destroy, :update]
+  resources :course, only: [:index, :create, :destroy, :update, :register]
+  get '/course/register/:course_id/:user_id', to: 'course#register'
 
 end

@@ -4,31 +4,45 @@ class CourseController < ApplicationController
     @admin = isAdmin;
   end
 
-  def show
-    @course = Course.find(params[:id])
-    @admin = isAdmin;
+  def register
+    if user_signed_in?
+      course_id = params[:course_id];
+      user_id = params[:user_id];
+      user = User.find(user_id);
+      user.course_ids = course_id;
+      if user.save
+        flash[:notice] = "ثبت نام با موفقیت انجام شد"
+      else
+        flash[:alert] = "درخواست شما با خطا مواجه شد"
+      end
+      redirect_to course_index_path
+    end
   end
 
   def create
-    @course = Course.new(course_params)
+    if isAdmin
+      @course = Course.new(course_params)
 
-    if @course.save
-      flash[:notice] = "با موفقیت اضافه شد"
-    else
-      flash[:alert] = "درخواست شما با خطا مواجه شد"
+      if @course.save
+        flash[:notice] = "با موفقیت اضافه شد"
+      else
+        flash[:alert] = "درخواست شما با خطا مواجه شد"
+      end
+      redirect_to course_index_path
     end
-    redirect_to course_index_path
   end
 
   def update
-    @course = Course.find(params[:id])
+    if isAdmin
+      @course = Course.find(params[:id])
 
-    if @course.update(course_params)
-      flash[:notice] = "تغییر با موفقیت انجام شد"
-    else
-      flash[:alert] = "درخواست شما با خطا مواجه شد"
+      if @course.update(course_params)
+        flash[:notice] = "تغییر با موفقیت انجام شد"
+      else
+        flash[:alert] = "درخواست شما با خطا مواجه شد"
+      end
+      redirect_to course_index_path
     end
-    redirect_to course_index_path
   end
 
   def destroy
@@ -52,6 +66,6 @@ class CourseController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:name, :discribtion, :price, :capacity, :avatar)
+    params.require(:course).permit(:name, :description, :price, :capacity, :avatar)
   end
 end

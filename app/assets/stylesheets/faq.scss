@@ -73,6 +73,7 @@
   margin-top: 5px;
   height: fit-content;
   margin-bottom: 0px;
+  min-width: 100px;
 }
 
 .faq_answer {
@@ -107,6 +108,10 @@
   float: left;
   color: white;
   border-radius: 2px;
+}
+
+.faq_question_button:hover {
+  background-color: turquoise;
 }
 
 .faq_question_button a {
