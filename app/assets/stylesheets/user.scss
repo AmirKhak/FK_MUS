@@ -27,6 +27,7 @@
   background-color: inherit;
   border: 1px solid white;
   border-radius: 3px;
+  color: white;
 }
 
 .user_button:hover {
@@ -50,4 +51,10 @@
   -ms-transform: translate(5px, -7.5px); /* IE 9 */
   -webkit-transform: translate(5px, -7.5px); /* Safari */
   transform: translate(5px, -7.5px);
+}
+
+#courseModalContent {
+  color: white;
+  overflow: hidden;
+  background-color: indianred;
 }

@@ -14,6 +14,32 @@
           <button class="user_button">
             <%= link_to("حذف", user_path(user.id)) %>
           </button>
+          <button class="user_button" data-toggle="modal" data-target="#courseModal">دوره ها</button>
+
+          <div class="modal" id="courseModal" role="dialog">
+            <div class="gorgan_map_Modal" class="modal-dialog">
+
+              <!-- Modal content-->
+              <div id="courseModalContent" class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3>دوره ها</h3>
+                </div>
+                <div class="modal-body">
+                  <% if user.course_ids.nil? %>
+                    <p>در هیچ دوره ای شرکت نکرده</p>
+                  <% else %>
+                    <% user.course_ids.each do |course_id| %>
+                      <% course = Course.find(course_id) %>
+                      <p><%= course.name  %></p>
+                    <% end %>
+                  <% end%>
+                </div>
+              </div>
+
+            </div>
+          </div>
           <p><%= user.name %>: نام</p>
           <p class="user_p"><%= user.surn_name %>: نام خانوادگی</p>
           <p class="user_p"><%= user.email %>: پست الکترونیک</p>
